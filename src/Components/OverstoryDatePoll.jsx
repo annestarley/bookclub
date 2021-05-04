@@ -18,21 +18,22 @@ class OverstoryDatePoll extends Component {
     oncheck (e) {
         let checkbox = e.target.previousSibling;
         let currentState = this.state[checkbox.id];
-        console.log(e.target)
 
-        if (checkbox.checked) {
-            checkbox.checked = false;
-            let newState = currentState - 1;
-            this.setState({[checkbox.id]: newState});
-            e.target.innerHTML = '';
-            console.log(this.state)
-        } else {
-            checkbox.checked = true;
-            let newState = currentState + 1;
-
-            this.setState({[checkbox.id]: newState});
-            e.target.innerHTML = '<p>&#10003;<p>';
-            console.log(this.state)
+        if (checkbox) {
+            if (checkbox.checked) {
+                checkbox.checked = false;
+                let newState = currentState - 1;
+                this.setState({[checkbox.id]: newState});
+                e.target.innerHTML = '';
+                console.log(this.state)
+            } else {
+                checkbox.checked = true;
+                let newState = currentState + 1;
+    
+                this.setState({[checkbox.id]: newState});
+                e.target.innerHTML = '&#10003;';
+                console.log(this.state)
+            }
         }
     }
 
@@ -127,23 +128,23 @@ class OverstoryDatePoll extends Component {
                         <td className="name">Matthew</td>
                         <td>
                             <input type="checkbox" id="may4" />
-                            <span className="checkbox"  onClick={(e)=>this.oncheck(e)}></span>
+                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may4"></span>
                         </td>
                         <td>
                             <input type="checkbox" id="may5" />
-                            <span className="checkbox"  onClick={(e)=>this.oncheck(e)}></span>
+                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may5"></span>
                         </td>
                         <td>
                             <input type="checkbox" id="may6" />
-                            <span className="checkbox"  onClick={(e)=>this.oncheck(e)}></span>
+                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may6"></span>
                         </td>
                         <td>
                             <input type="checkbox" id="may7" />
-                            <span className="checkbox"  onClick={(e)=>this.oncheck(e)}></span>
+                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may7"></span>
                         </td>
                         <td>
                             <input type="checkbox" id="may10" />
-                            <span className="checkbox"  onClick={(e)=>this.oncheck(e)}></span>
+                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may10"></span>
                         </td>
                     </tr>
                     <tr>
