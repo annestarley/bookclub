@@ -1,5 +1,6 @@
 import React, {Component, Fragment } from 'react';
 import '../App.css';
+import OverstoryCalendar from './OverstoryCalendar';
 
 class OverstoryDatePoll extends Component {
     constructor(props) {
@@ -57,141 +58,27 @@ class OverstoryDatePoll extends Component {
                     </tr>
                     <tr>
                         <td className="name">Holly</td>
-                        <td>
-                            <input type="checkbox" id="may4" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may4"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may5" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may5"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may6" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may6"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may7" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may7"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may10" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may10"></span>
-                        </td>
+                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)}/>
                     </tr>
                     <tr>
                         <td className="name">Nathan+Stacey</td>
-                        <td>
-                            <input type="checkbox" id="may4" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may4"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may5" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may5"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may6" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may6"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may7" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may7"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may10" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may10"></span>
-                        </td>
+                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)}/>
                     </tr>
                     <tr>
                         <td className="name">Heather+Dan</td>
-                        <td>
-                            <input type="checkbox" id="may4" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may4"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may5" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may5"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may6" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may6"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may7" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may7"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may10" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may10"></span>
-                        </td>
+                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)}/>
                     </tr>
                     <tr>
                         <td className="name">Matthew</td>
-                        <td>
-                            <input type="checkbox" id="may4" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may4"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may5" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may5"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may6" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may6"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may7" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may7"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may10" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may10"></span>
-                        </td>
+                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)}/>
                     </tr>
                     <tr>
                         <td className="name">Spencer+Cassie</td>
-                        <td>
-                            <input type="checkbox" id="may4" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may4"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may5" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may5"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may6" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may6"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may7" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may7"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may10" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may10"></span>
-                        </td>
+                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)}/>
                     </tr>
                     <tr>
                         <td className="name">Anne+Paul</td>
-                        <td>
-                            <input type="checkbox" id="may4" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may4"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may5" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may5"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may6" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may6"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may7" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may7"></span>
-                        </td>
-                        <td>
-                            <input type="checkbox" id="may10" />
-                            <span className="checkbox" onClick={(e)=>this.oncheck(e)} id="may10"></span>
-                        </td>
+                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)}/>
                     </tr>
                 </table>
             </Fragment>
