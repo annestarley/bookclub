@@ -10,24 +10,24 @@ class OverstoryCalendar extends Component {
         return (
             <Fragment>
                 <td>
-                    <input type="checkbox" id="may4" />
-                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="may4"></span>
+                    <input type="checkbox" id="day1" />
+                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="day1"></span>
                 </td>
                 <td>
-                    <input type="checkbox" id="may5" />
-                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="may5"></span>
+                    <input type="checkbox" id="day2" />
+                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="day2"></span>
                 </td>
                 <td>
-                    <input type="checkbox" id="may6" />
-                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="may6"></span>
+                    <input type="checkbox" id="day3" />
+                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="day3"></span>
                 </td>
                 <td>
-                    <input type="checkbox" id="may7" />
-                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="may7"></span>
+                    <input type="checkbox" id="day4" />
+                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="day4"></span>
                 </td>
                 <td>
-                    <input type="checkbox" id="may10" />
-                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="may10"></span>
+                    <input type="checkbox" id="day5" />
+                    <span className="checkbox" onClick={(e)=>this.props.oncheck(e)} id="day5"></span>
                 </td>
             </Fragment>
         )
