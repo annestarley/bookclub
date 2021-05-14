@@ -149,11 +149,11 @@ class OverstoryDatePoll extends Component {
                 <table>
                     <tr>
                         <th></th>
-                        <th>May<br></br><span className="date">10</span><br></br>Mon</th>
-                        <th>May<br></br><span className="date">11</span><br></br>Tue</th>
-                        <th>May<br></br><span className="date">12</span><br></br>Wed</th>
-                        <th>May<br></br><span className="date">13</span><br></br>Thu</th>
-                        <th>May<br></br><span className="date">14</span><br></br>Fri</th>
+                        <th>May<br></br><span className="date">17</span><br></br>Mon</th>
+                        <th>May<br></br><span className="date">18</span><br></br>Tue</th>
+                        <th>May<br></br><span className="date">19</span><br></br>Wed</th>
+                        <th>May<br></br><span className="date">20</span><br></br>Thu</th>
+                        <th>May<br></br><span className="date">21</span><br></br>Fri</th>
                     </tr>
                     <tr>
                         <td className="name holl" id="holl">Holly</td>
