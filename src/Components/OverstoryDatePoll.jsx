@@ -103,7 +103,7 @@ class OverstoryDatePoll extends Component {
     }
 
     getchecks() {
-        fetch('http://localhost:6001/overstorygetchecks', {
+        fetch('https://stark-inlet-70944.herokuapp.com/overstorygetchecks', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -118,7 +118,7 @@ class OverstoryDatePoll extends Component {
 
     postchecks(data) {
         console.log('inside postchecks', data)
-        fetch('http://localhost:6001/overstorypostchecks', {
+        fetch('https://stark-inlet-70944.herokuapp.com/overstorypostchecks', {
             method: 'POST',
             headers: {
                 'Content-Type': "application/json"
