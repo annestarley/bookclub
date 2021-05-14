@@ -6,18 +6,20 @@ class OverstoryDatePoll extends Component {
     constructor(props) {
         super (props)
         this.state = {
-            day1: 0,
-            day2: 0,
-            day3: 0,
-            day4: 0,
-            day5: 0,
+            days: {
+                day1: 0,
+                day2: 0,
+                day3: 0,
+                day4: 0,
+                day5: 0
+            },
             checks: {
-                holl: [true,false,false,true,false],
+                holl: [false,false,false,false,false],
                 nath: [false,false,false,false,false],
                 heat: [false,false,false,false,false],
                 matt: [false,false,false,false,false],
                 spen: [false,false,false,false,false],
-                anne: [false,true,false,false,false]
+                anne: [false,false,false,false,false]
             }
         }
 
@@ -28,17 +30,22 @@ class OverstoryDatePoll extends Component {
     }
 
     componentDidMount() {
-        this.setchecks();
+        this.getchecks();
     }
 
-    setchecks () {
+    setchecks (newstate) {
         let names = document.querySelectorAll('.name')
+        let newChecks = newstate.checks
+        this.setState({checks: newChecks})
+        let newDays = newstate.days;
+        this.setState({days: newDays})
+        console.log('setchecks state', this.state)
 
         names.forEach(name => {
             let person = name.innerText;
             person = person.slice(0,4).toLowerCase();
             let section = document.querySelector(`.${person}`).parentElement;
-            let sectionArr = this.state.checks[person];
+            let sectionArr = newstate.checks[person];
 
             let inputs = section.querySelectorAll('input');
 
@@ -46,9 +53,6 @@ class OverstoryDatePoll extends Component {
                 input.checked = sectionArr[i];
                 if (sectionArr[i] == true) input.nextSibling.innerHTML = '&#10003;'
                 else input.nextSibling.innerHTML = '';
-
-                // let day = `day${i+1}`;
-                // if (sectionArr[i]) day++
             })
 
         })
@@ -56,10 +60,9 @@ class OverstoryDatePoll extends Component {
 
     oncheck (e) {
         let checkbox = e.target.previousSibling;
-        let currentState = this.state[checkbox.id];
+        let currentState = this.state.days[checkbox.id];
         let name = checkbox.parentElement.parentElement.firstChild.id;
         let iteration = checkbox.id.slice(3) - 1;
-        console.log(name, iteration, 'trying hard')
 
         if (checkbox) {
             if (checkbox.checked) {
@@ -67,35 +70,71 @@ class OverstoryDatePoll extends Component {
                 e.target.innerHTML = '';
 
                 let newState = currentState - 1;
-                this.setState({[checkbox.id]: newState});
+                let newDays = this.state.days
+                let day = checkbox.id;
+                newDays[day] = newState
+                this.setState({days: newDays});
 
                 let newCheckState = this.state.checks;
                 newCheckState[name][iteration] = false;
                 this.setState({checks: newCheckState});
                 
-                console.log(this.state)
+                console.log('unchecked', this.state)
             } else {
                 checkbox.checked = true;
                 e.target.innerHTML = '&#10003;';
                 
                 let newState = currentState + 1;
-                this.setState({[checkbox.id]: newState});
+                let newDays = this.state.days
+                let day = checkbox.id;
+                newDays[day] = newState
+                this.setState({days: newDays});
 
                 let newCheckState = this.state.checks;
                 newCheckState[name][iteration] = true;
                 this.setState({checks: newCheckState});
                 
-                console.log(this.state)
+                console.log('checked', this.state)
             }
         }
+
+        let data = this.state;
+        this.postchecks(data);
     }
 
     getchecks() {
-
+        fetch('http://localhost:6001/overstorygetchecks', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(results => {
+            console.log('GET call to server', results)
+            this.setchecks(results)
+        });
     }
 
-    postchecks() {
-        
+    postchecks(data) {
+        console.log('inside postchecks', data)
+        fetch('http://localhost:6001/overstorypostchecks', {
+            method: 'POST',
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(res => {
+            console.log('res', res)
+            res.json()
+        })
+        .then(results => {
+            console.log('POST call to server', results)
+        })
+        .catch(err => {
+            console.log('Error: ', err)
+        })
     }
 
     render() {
@@ -110,15 +149,15 @@ class OverstoryDatePoll extends Component {
                 <table>
                     <tr>
                         <th></th>
-                        <th>May<br></br><span className="date">4</span><br></br>Tues</th>
-                        <th>May<br></br><span className="date">5</span><br></br>Wed</th>
-                        <th>May<br></br><span className="date">6</span><br></br>Thu</th>
-                        <th>May<br></br><span className="date">7</span><br></br>Fri</th>
                         <th>May<br></br><span className="date">10</span><br></br>Mon</th>
+                        <th>May<br></br><span className="date">11</span><br></br>Tue</th>
+                        <th>May<br></br><span className="date">12</span><br></br>Wed</th>
+                        <th>May<br></br><span className="date">13</span><br></br>Thu</th>
+                        <th>May<br></br><span className="date">14</span><br></br>Fri</th>
                     </tr>
                     <tr>
                         <td className="name holl" id="holl">Holly</td>
-                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)} setcheck={()=>this.setcheck()}/>
+                        <OverstoryCalendar oncheck={(e)=>this.oncheck(e)}/>
                     </tr>
                     <tr>
                         <td className="name nath" id="nath">Nathan+Stacey</td>
