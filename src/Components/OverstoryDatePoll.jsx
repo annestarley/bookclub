@@ -80,6 +80,8 @@ class OverstoryDatePoll extends Component {
                 this.setState({checks: newCheckState});
                 
                 console.log('unchecked', this.state)
+                let data = this.state;
+                this.postchecks(data);
             } else {
                 checkbox.checked = true;
                 e.target.innerHTML = '&#10003;';
@@ -95,11 +97,10 @@ class OverstoryDatePoll extends Component {
                 this.setState({checks: newCheckState});
                 
                 console.log('checked', this.state)
+                let data = this.state;
+                this.postchecks(data);
             }
         }
-
-        let data = this.state;
-        this.postchecks(data);
     }
 
     getchecks() {
